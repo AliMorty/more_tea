@@ -159,41 +159,20 @@ h1, h2, h3, h4 {
 .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* =============================================
-   HERO
+   HERO BANNER (inside left column)
    ============================================= */
-.hero {
+.hero-banner {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-banner img {
   width: 100%;
-  min-height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 3rem 1.5rem;
-
-  background: linear-gradient(rgba(30,10,0,0.45), rgba(30,10,0,0.45)),
-              url('../images/hero.png') center / cover no-repeat;
-}
-
-.hero-content h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 4vw, 2.8rem);
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-
-.hero-content p {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--gold-light);
-  margin-bottom: 0.25rem;
-}
-
-.hero-sub {
-  font-size: 0.9rem !important;
-  color: rgba(255,255,255,0.75) !important;
-  margin-top: 0.5rem !important;
+  height: 220px;
+  object-fit: cover;
+  display: block;
 }
 
 /* =============================================
