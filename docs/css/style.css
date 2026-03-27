@@ -479,6 +479,17 @@ h1, h2, h3, h4 {
   color: var(--white);
 }
 
+.btn-secondary {
+  background-color: var(--cream-dark);
+  color: var(--brown-dark);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--gold-light);
+  color: var(--brown-dark);
+}
+
 .btn-instagram {
   background-color: var(--gold-light);
   color: var(--brown-dark);
