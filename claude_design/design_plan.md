@@ -84,8 +84,32 @@ docs/
 
 ### Responsiveness
 
-- The layout stacks vertically on mobile (sidebar moves below main content)
-- Navigation collapses to a hamburger menu on small screens
+The site must render well on iPhone, Android, and desktop. Every page must be tested mentally against all three before being considered done.
+
+**Rules for all pages:**
+- Include `<meta name="viewport" content="width=device-width, initial-scale=1">` in every HTML file - this is required for mobile browsers to scale correctly
+- Use relative units (`rem`, `%`, `vw`) not fixed pixel widths for layout containers
+- No horizontal scrolling on any screen size
+- Tap targets (buttons, links) must be at least 44x44px on mobile
+
+**Breakpoints:**
+| Name | Width | Target devices |
+|------|-------|----------------|
+| mobile | up to 600px | iPhone, small Android phones |
+| tablet | 601px - 1024px | iPads, large Android phones, small laptops |
+| desktop | 1025px and up | laptops, monitors |
+
+**Layout changes by breakpoint:**
+- **Desktop**: two-column layout (main content left, sidebar right), horizontal navbar
+- **Tablet**: same two-column layout but narrower sidebar, slightly smaller font
+- **Mobile**: single column, sidebar stacks below main content, navbar collapses to a hamburger menu
+
+**Images:**
+- All images use `max-width: 100%` so they never overflow their container
+- Hero banner uses `background-size: cover` so it fills the banner at any screen width
+
+**Calendar:**
+- On mobile, the calendar grid shrinks and event text is truncated with a tap-to-expand behavior
 
 ---
 
