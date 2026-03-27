@@ -592,6 +592,14 @@ footer span {
   margin-top: 1rem;
 }
 
+.connect-card-centered {
+  max-width: 360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .connect-card {
   background: var(--white);
   border-radius: var(--radius);
