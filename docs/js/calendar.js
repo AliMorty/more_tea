@@ -5,65 +5,65 @@
 const EVENTS = [
   {
     date: '2026-03-04',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-03-11',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-03-18',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-03-25',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-04-01',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-04-08',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-04-15',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-04-22',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
     date: '2026-04-29',
-    title: 'Tea Gathering',
-    location: 'ECS 6th Floor Lounge',
-    time: '4:00 PM - 6:00 PM',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 2:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   }
 ];
