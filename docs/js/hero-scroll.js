@@ -46,22 +46,33 @@
     }
   }, { passive: false });
 
-  // Touch support
+  // Touch support — block ALL scrolling while hero is visible
   var touchStartY = 0;
   window.addEventListener('touchstart', function (e) {
     touchStartY = e.touches[0].clientY;
   }, { passive: true });
 
   window.addEventListener('touchmove', function (e) {
+    // Always block scrolling during animation
     if (animating) { e.preventDefault(); return; }
-    var deltaY = touchStartY - e.touches[0].clientY;
 
-    if (!dismissed && deltaY > 30) {
+    // While hero is showing, block all native scrolling
+    if (!dismissed) {
       e.preventDefault();
-      dismissHero();
-    } else if (dismissed && deltaY < -30 && window.scrollY === 0) {
-      e.preventDefault();
-      restoreHero();
+      var deltaY = touchStartY - e.touches[0].clientY;
+      if (deltaY > 30) {
+        dismissHero();
+      }
+      return;
+    }
+
+    // After hero is gone, only intercept scroll-up at top to restore
+    if (window.scrollY === 0) {
+      var deltaY = touchStartY - e.touches[0].clientY;
+      if (deltaY < -30) {
+        e.preventDefault();
+        restoreHero();
+      }
     }
   }, { passive: false });
 })();
