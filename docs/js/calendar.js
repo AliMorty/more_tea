@@ -73,11 +73,15 @@ const EVENTS = [
 // =============================================
 const today = new Date();
 let currentYear  = today.getFullYear();
-let currentMonth = today.getMonth(); // 0-indexed
+let currentMonth = today.getMonth();
 
 const MONTH_NAMES = [
   'January','February','March','April','May','June',
   'July','August','September','October','November','December'
+];
+const MONTH_SHORT = [
+  'Jan','Feb','Mar','Apr','May','Jun',
+  'Jul','Aug','Sep','Oct','Nov','Dec'
 ];
 const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
@@ -90,7 +94,6 @@ function toDateKey(year, month, day) {
   return `${year}-${mm}-${dd}`;
 }
 
-// Build a map of dateKey -> [events] for fast lookup
 function buildEventMap() {
   const map = {};
   EVENTS.forEach(function(ev) {
@@ -106,14 +109,13 @@ function buildEventMap() {
 function renderCalendar(year, month) {
   const eventMap = buildEventMap();
 
-  // Update month label
   const label = document.getElementById('month-label');
   if (label) label.textContent = MONTH_NAMES[month] + ' ' + year;
 
   const container = document.getElementById('calendar');
   if (!container) return;
 
-  const firstDay  = new Date(year, month, 1).getDay(); // 0=Sun
+  const firstDay    = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const daysInPrev  = new Date(year, month, 0).getDate();
 
@@ -123,7 +125,7 @@ function renderCalendar(year, month) {
   });
   html += '</tr></thead><tbody>';
 
-  let dayCount = 1;
+  let dayCount  = 1;
   let nextCount = 1;
 
   for (let row = 0; row < 6; row++) {
@@ -132,20 +134,18 @@ function renderCalendar(year, month) {
       const cellIndex = row * 7 + col;
 
       if (cellIndex < firstDay) {
-        // Previous month day
         const prevDay = daysInPrev - firstDay + cellIndex + 1;
         html += '<td class="other-month"><span class="cal-day">' + prevDay + '</span></td>';
 
       } else if (dayCount > daysInMonth) {
-        // Next month day
         html += '<td class="other-month"><span class="cal-day">' + nextCount + '</span></td>';
         nextCount++;
 
       } else {
-        const dateKey = toDateKey(year, month, dayCount);
-        const isToday = (
-          year  === today.getFullYear() &&
-          month === today.getMonth() &&
+        const dateKey  = toDateKey(year, month, dayCount);
+        const isToday  = (
+          year     === today.getFullYear() &&
+          month    === today.getMonth()    &&
           dayCount === today.getDate()
         );
         const dayEvents = eventMap[dateKey] || [];
@@ -155,15 +155,10 @@ function renderCalendar(year, month) {
         if (isToday)  cls += ' today';
         if (hasEvent) cls += ' has-event';
 
-        const dots = hasEvent
-          ? '<div class="event-dot-row">' + dayEvents.map(function() { return '<span class="event-dot"></span>'; }).join('') + '</div>'
-          : '';
-
         const dataAttr = hasEvent ? ' data-date="' + dateKey + '"' : '';
 
         html += '<td class="' + cls.trim() + '"' + dataAttr + '>'
               + '<span class="cal-day">' + dayCount + '</span>'
-              + dots
               + '</td>';
 
         dayCount++;
@@ -176,7 +171,6 @@ function renderCalendar(year, month) {
   html += '</tbody></table>';
   container.innerHTML = html;
 
-  // Attach click handlers to event cells
   container.querySelectorAll('td.has-event').forEach(function(cell) {
     cell.addEventListener('click', function(e) {
       const dateKey = cell.dataset.date;
@@ -187,13 +181,49 @@ function renderCalendar(year, month) {
 }
 
 // =============================================
+// FEATURED GATHERINGS
+// =============================================
+function renderFeaturedGatherings() {
+  const container = document.getElementById('featured-gatherings');
+  if (!container) return;
+
+  const todayKey = toDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+
+  const upcoming = EVENTS
+    .filter(function(ev) { return ev.date >= todayKey; })
+    .slice(0, 5);
+
+  if (upcoming.length === 0) {
+    container.innerHTML = '<p style="color:var(--text-light);font-size:0.85rem;">No upcoming events.</p>';
+    return;
+  }
+
+  container.innerHTML = upcoming.map(function(ev) {
+    const parts = ev.date.split('-');
+    const day   = parseInt(parts[2], 10);
+    const mon   = MONTH_SHORT[parseInt(parts[1], 10) - 1];
+
+    return '<div class="gathering-item">'
+         +   '<div class="gathering-date-badge">'
+         +     '<span class="g-day">' + day + '</span>'
+         +     '<span class="g-month">' + mon + '</span>'
+         +   '</div>'
+         +   '<div class="gathering-info">'
+         +     '<strong>' + ev.title + '</strong>'
+         +     '<span>' + ev.time + ' &bull; ' + ev.location + '</span>'
+         +   '</div>'
+         + '</div>';
+  }).join('');
+}
+
+// =============================================
 // EVENT POPUP
 // =============================================
 function createPopup() {
   const popup = document.createElement('div');
   popup.className = 'event-popup';
   popup.id = 'event-popup';
-  popup.innerHTML = '<button class="event-popup-close" id="popup-close">x</button>'
+  popup.innerHTML = '<button class="event-popup-close" id="popup-close">&times;</button>'
                   + '<div class="event-popup-title" id="popup-title"></div>'
                   + '<div class="event-popup-detail" id="popup-time"></div>'
                   + '<div class="event-popup-detail" id="popup-location"></div>'
@@ -222,9 +252,8 @@ function showPopup(e, ev) {
   document.getElementById('popup-location').textContent = ev.location;
   document.getElementById('popup-desc').textContent     = ev.description;
 
-  // Position near the click
-  const x = Math.min(e.clientX + 10, window.innerWidth  - 300);
-  const y = Math.min(e.clientY + 10, window.innerHeight - 180);
+  const x = Math.min(e.clientX + 10, window.innerWidth  - 310);
+  const y = Math.min(e.clientY + 10, window.innerHeight - 190);
   popup.style.left = x + 'px';
   popup.style.top  = y + 'px';
 
@@ -256,6 +285,7 @@ function initCalendar() {
   }
 
   renderCalendar(currentYear, currentMonth);
+  renderFeaturedGatherings();
 }
 
 document.addEventListener('DOMContentLoaded', initCalendar);

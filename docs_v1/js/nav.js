@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hamburger.setAttribute('aria-expanded', open);
   });
 
+  // Close nav when a link is clicked (mobile)
   navLinks.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function() {
       navLinks.classList.remove('open');
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Close nav when clicking outside
   document.addEventListener('click', function(e) {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
       navLinks.classList.remove('open');

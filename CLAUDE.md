@@ -11,6 +11,17 @@
 - `claude_design/` - design plans and technical specs for Claude and contributors to follow
 - `Gemini_Photo_Request/` - image request descriptions for Gemini to generate
 - `docs/` - the actual website files (GitHub Pages serves from this folder)
+- `agentic_sessions/` - session summaries written by Claude at the end of each conversation
+
+## Session Summaries
+
+At the end of every session, Claude must write a summary file in `agentic_sessions/`.
+
+**Naming convention:** `YYYY-MM-DD_1.md`, `YYYY-MM-DD_2.md`, etc. — increment the number if a file for that date already exists.
+
+**File structure:**
+1. **High-level summary** — plain English, what was accomplished, what decisions were made. Written so the user can quickly understand what happened without reading code.
+2. **Technical details** — specific files created or modified, CSS classes added, JS functions changed, folder structure changes, etc.
 
 ## Rules
 
