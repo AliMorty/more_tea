@@ -3,40 +3,65 @@
   if (!hero) return;
 
   var dismissed = false;
+  var animating = false;
 
   function dismissHero() {
-    if (dismissed) return;
-    dismissed = true;
+    if (dismissed || animating) return;
+    animating = true;
     hero.classList.add('hero-exit');
 
-    // After animation, scroll to top so there's no white gap at the bottom
     hero.addEventListener('transitionend', function onEnd(e) {
       if (e.propertyName !== 'margin-top') return;
       hero.removeEventListener('transitionend', onEnd);
+      dismissed = true;
+      animating = false;
       window.scrollTo(0, 0);
     });
   }
 
-  // Trigger on any downward scroll
+  function restoreHero() {
+    if (!dismissed || animating) return;
+    animating = true;
+    window.scrollTo(0, 0);
+    hero.classList.remove('hero-exit');
+
+    hero.addEventListener('transitionend', function onEnd(e) {
+      if (e.propertyName !== 'margin-top') return;
+      hero.removeEventListener('transitionend', onEnd);
+      dismissed = false;
+      animating = false;
+    });
+  }
+
+  // Scroll down = dismiss, scroll up at top = restore
   window.addEventListener('wheel', function (e) {
+    if (animating) { e.preventDefault(); return; }
+
     if (!dismissed && e.deltaY > 0) {
       e.preventDefault();
       dismissHero();
+    } else if (dismissed && e.deltaY < 0 && window.scrollY === 0) {
+      e.preventDefault();
+      restoreHero();
     }
   }, { passive: false });
 
-  // Touch support: swipe up dismisses
+  // Touch support
   var touchStartY = 0;
   window.addEventListener('touchstart', function (e) {
-    if (!dismissed) touchStartY = e.touches[0].clientY;
+    touchStartY = e.touches[0].clientY;
   }, { passive: true });
 
   window.addEventListener('touchmove', function (e) {
-    if (dismissed) return;
+    if (animating) { e.preventDefault(); return; }
     var deltaY = touchStartY - e.touches[0].clientY;
-    if (deltaY > 30) {
+
+    if (!dismissed && deltaY > 30) {
       e.preventDefault();
       dismissHero();
+    } else if (dismissed && deltaY < -30 && window.scrollY === 0) {
+      e.preventDefault();
+      restoreHero();
     }
   }, { passive: false });
 })();
