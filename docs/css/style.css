@@ -653,6 +653,17 @@ h1, h2, h3, h4 {
   color: var(--brown-dark);
 }
 
+.btn-modern {
+  background-color: var(--brown-dark);
+  color: var(--white);
+  border: none;
+}
+
+.btn-modern:hover {
+  background-color: var(--brown-mid);
+  color: var(--white);
+}
+
 .btn-hero {
   display: inline-flex;
   width: auto;
