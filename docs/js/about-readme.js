@@ -2,7 +2,7 @@
   var container = document.querySelector('.about-body');
   if (!container) return;
 
-  var url = 'https://raw.githubusercontent.com/AliMorty/more_tea_community/main/README.md';
+  var url = 'https://raw.githubusercontent.com/AliMorty/more_tea/main/README.md';
 
   fetch(url)
     .then(function (res) { return res.text(); })
