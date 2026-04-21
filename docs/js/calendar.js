@@ -199,11 +199,27 @@ function renderCalendar(year, month) {
   html += '</tbody></table>';
   container.innerHTML = html;
 
+  var hoverTimer = null;
+
   container.querySelectorAll('td.has-event').forEach(function(cell) {
+    cell.addEventListener('mouseenter', function(e) {
+      hoverTimer = setTimeout(function() {
+        const dateKey = cell.dataset.date;
+        const evs = eventMap[dateKey] || [];
+        showPopup(e, evs[0]);
+      }, 300);
+    });
+    cell.addEventListener('mouseleave', function() {
+      clearTimeout(hoverTimer);
+      const popup = document.getElementById('event-popup');
+      if (popup) popup.classList.remove('visible');
+    });
     cell.addEventListener('click', function(e) {
+      clearTimeout(hoverTimer);
       const dateKey = cell.dataset.date;
       const evs = eventMap[dateKey] || [];
       showPopup(e, evs[0]);
+      e.stopPropagation();
     });
   });
 }
