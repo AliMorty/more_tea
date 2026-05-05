@@ -104,19 +104,11 @@ DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Deca
 LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
 BEGIN:VEVENT
-UID:more-tea-20260505@more_tea_community
-DTSTART;TZID=America/Vancouver:20260505T120000
-DTEND;TZID=America/Vancouver:20260505T140000
-SUMMARY:More Tea Tuesday
-DESCRIPTION:We've moved our gatherings to Tuesdays for this summer (at least the month of May) due to TA duties this semester for Ali More Tea.
-LOCATION:ECS 668, University of Victoria, Victoria, BC
-END:VEVENT
-BEGIN:VEVENT
 UID:more-tea-20260512@more_tea_community
 DTSTART;TZID=America/Vancouver:20260512T120000
 DTEND;TZID=America/Vancouver:20260512T140000
 SUMMARY:More Tea Tuesday
-DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
+DESCRIPTION:We've moved our gatherings to Tuesdays for this summer (at least the month of May) due to TA duties this semester for Ali More Tea.
 LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
 BEGIN:VEVENT

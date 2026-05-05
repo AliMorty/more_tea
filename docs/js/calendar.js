@@ -74,18 +74,11 @@ const EVENTS = [
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
-    date: '2026-05-05',
-    title: 'More Tea Tuesday',
-    location: 'ECS 668',
-    time: '12:00 PM - 2:00 PM',
-    description: "We've moved our gatherings to Tuesdays for this summer (at least the month of May) due to TA duties this semester for Ali More Tea."
-  },
-  {
     date: '2026-05-12',
     title: 'More Tea Tuesday',
     location: 'ECS 668',
     time: '12:00 PM - 2:00 PM',
-    description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
+    description: "We've moved our gatherings to Tuesdays for this summer (at least the month of May) due to TA duties this semester for Ali More Tea."
   },
   {
     date: '2026-05-19',
