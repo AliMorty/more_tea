@@ -74,25 +74,25 @@ const EVENTS = [
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
-    date: '2026-05-12',
-    title: 'More Tea Tuesday',
+    date: '2026-05-14',
+    title: 'More Tea Thursday',
     location: 'ECS 668',
-    time: '12:00 PM - 2:00 PM',
-    description: "We've moved our gatherings to Tuesdays for this summer (at least the month of May) due to TA duties this semester for Ali More Tea."
+    time: '4:30 PM - 5:30 PM',
+    description: "We've moved our gatherings to Thursdays at 4:30pm for this summer (at least the month of May) due to TA duties this semester for Ali More Tea."
   },
   {
-    date: '2026-05-19',
-    title: 'More Tea Tuesday',
+    date: '2026-05-21',
+    title: 'More Tea Thursday',
     location: 'ECS 668',
-    time: '12:00 PM - 2:00 PM',
+    time: '4:30 PM - 5:30 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
-    date: '2026-05-26',
-    title: 'More Tea Tuesday',
+    date: '2026-05-28',
+    title: 'More Tea Thursday',
     location: 'ECS 668',
-    time: '12:00 PM - 1:15 PM',
-    description: 'This week, the event starts at 12pm but ends at 1:15pm, to accommodate those who want to join Lunch \'n Learn Seminars which is happening from 1:30 to 2:30pm at ECS 660.'
+    time: '4:30 PM - 5:30 PM',
+    description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   }
 ];
 
