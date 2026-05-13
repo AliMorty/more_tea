@@ -121,8 +121,9 @@ h1, h2, h3, h4 {
 .nav-links a {
   display: block;
   padding: 0.4rem 0.9rem;
+  font-family: 'Calisto MT', 'Bookman Old Style', Garamond, serif;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold-light);
