@@ -127,4 +127,36 @@ SUMMARY:More Tea Thursday
 DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
 LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260603@more_tea_community
+DTSTART;TZID=America/Vancouver:20260603T120000
+DTEND;TZID=America/Vancouver:20260603T130000
+SUMMARY:More Tea Wednesday
+DESCRIPTION:We're back to Wednesdays! This time\, it's from 12pm to 1pm.
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260610@more_tea_community
+DTSTART;TZID=America/Vancouver:20260610T120000
+DTEND;TZID=America/Vancouver:20260610T130000
+SUMMARY:More Tea Wednesday
+DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260617@more_tea_community
+DTSTART;TZID=America/Vancouver:20260617T120000
+DTEND;TZID=America/Vancouver:20260617T130000
+SUMMARY:More Tea Wednesday
+DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260624@more_tea_community
+DTSTART;TZID=America/Vancouver:20260624T120000
+DTEND;TZID=America/Vancouver:20260624T130000
+SUMMARY:More Tea Wednesday
+DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
 END:VCALENDAR
