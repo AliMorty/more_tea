@@ -116,6 +116,13 @@ const EVENTS = [
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
+    date: '2026-06-24',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 1:00 PM',
+    description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
+  },
+  {
     date: '2026-07-01',
     title: 'More Tea Wednesday',
     location: 'ECS 668',
