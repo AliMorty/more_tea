@@ -149,6 +149,28 @@ const EVENTS = [
     location: 'ECS 668',
     time: '12:00 PM - 1:00 PM',
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
+  },
+  {
+    date: '2026-08-05',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 1:00 PM',
+    description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
+  },
+  {
+    date: '2026-08-12',
+    title: 'More Tea Wednesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 1:00 PM',
+    description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
+  },
+  {
+    date: '2026-08-20',
+    title: 'Frisbee + Tea Picnic',
+    location: 'UVic Quad',
+    locationUrl: 'https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6',
+    time: '4:30 PM - 6:00 PM',
+    description: "We don't have regular tea this week, however, we will have a frisbee + tea picnic outside the building. Ali will bring some tea (in his thermos) and some cups as well. Come by!"
   }
 ];
 
@@ -256,16 +278,19 @@ function renderCalendar(year, month) {
   container.innerHTML = html;
 
   var hoverTimer = null;
+  var popupPinned = false;
 
   container.querySelectorAll('td.has-event').forEach(function(cell) {
     cell.addEventListener('mouseenter', function(e) {
+      if (popupPinned) return;
       hoverTimer = setTimeout(function() {
         const dateKey = cell.dataset.date;
         const evs = eventMap[dateKey] || [];
-        showPopup(e, evs[0]);
+        showPopup(e, evs[0], false);
       }, 300);
     });
     cell.addEventListener('mouseleave', function() {
+      if (popupPinned) return;
       clearTimeout(hoverTimer);
       const popup = document.getElementById('event-popup');
       if (popup) popup.classList.remove('visible');
@@ -274,10 +299,19 @@ function renderCalendar(year, month) {
       clearTimeout(hoverTimer);
       const dateKey = cell.dataset.date;
       const evs = eventMap[dateKey] || [];
-      showPopup(e, evs[0]);
+      popupPinned = true;
+      showPopup(e, evs[0], true);
       e.stopPropagation();
     });
   });
+
+  function unpinPopup() {
+    popupPinned = false;
+    const popup = document.getElementById('event-popup');
+    if (popup) popup.classList.remove('visible');
+  }
+
+  document._moreteaUnpin = unpinPopup;
 }
 
 // =============================================
@@ -331,26 +365,37 @@ function createPopup() {
   document.body.appendChild(popup);
 
   document.getElementById('popup-close').addEventListener('click', function() {
-    popup.classList.remove('visible');
+    if (document._moreteaUnpin) document._moreteaUnpin();
+    else popup.classList.remove('visible');
   });
 
   document.addEventListener('click', function(e) {
     if (!popup.contains(e.target) && !e.target.closest('td.has-event')) {
-      popup.classList.remove('visible');
+      if (document._moreteaUnpin) document._moreteaUnpin();
+      else popup.classList.remove('visible');
     }
   });
 
   return popup;
 }
 
-function showPopup(e, ev) {
+function showPopup(e, ev, pinned) {
   let popup = document.getElementById('event-popup');
   if (!popup) popup = createPopup();
 
-  document.getElementById('popup-title').textContent    = ev.title;
-  document.getElementById('popup-time').textContent     = ev.time;
-  document.getElementById('popup-location').textContent = ev.location;
-  document.getElementById('popup-desc').textContent     = ev.description;
+  popup.classList.toggle('pinned', !!pinned);
+
+  document.getElementById('popup-title').textContent = ev.title;
+  document.getElementById('popup-time').textContent  = ev.time;
+
+  const locEl = document.getElementById('popup-location');
+  if (ev.locationUrl) {
+    locEl.innerHTML = '<a href="' + ev.locationUrl + '" target="_blank" rel="noopener" style="color:var(--gold)">' + ev.location + ' ↗</a>';
+  } else {
+    locEl.textContent = ev.location;
+  }
+
+  document.getElementById('popup-desc').textContent = ev.description;
 
   const x = Math.min(e.clientX + 10, window.innerWidth  - 310);
   const y = Math.min(e.clientY + 10, window.innerHeight - 190);
@@ -388,4 +433,53 @@ function initCalendar() {
   renderFeaturedGatherings();
 }
 
-document.addEventListener('DOMContentLoaded', initCalendar);
+// =============================================
+// EVENT LIST (for announcements page)
+// =============================================
+function renderEventList() {
+  const container = document.getElementById('event-list');
+  if (!container) return;
+
+  const todayKey = toDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+
+  const sorted = EVENTS.slice().sort(function(a, b) { return a.date < b.date ? 1 : -1; });
+  const upcoming = sorted.filter(function(ev) { return ev.date >= todayKey; }).reverse();
+  const past     = sorted.filter(function(ev) { return ev.date  < todayKey; });
+
+  function makeItem(ev, isPast) {
+    const parts = ev.date.split('-');
+    const day   = parseInt(parts[2], 10);
+    const mon   = MONTH_SHORT[parseInt(parts[1], 10) - 1];
+    const year  = parts[0];
+    const locHtml = ev.locationUrl
+      ? '<a href="' + ev.locationUrl + '" target="_blank" rel="noopener">' + ev.location + ' ↗</a>'
+      : ev.location;
+    return '<div class="event-list-item' + (isPast ? ' event-list-past' : '') + '">'
+         +   '<div class="event-list-badge">'
+         +     '<span class="g-day">' + day + '</span>'
+         +     '<span class="g-month">' + mon + '</span>'
+         +     '<span class="g-year">' + year + '</span>'
+         +   '</div>'
+         +   '<div class="event-list-info">'
+         +     '<strong>' + ev.title + '</strong>'
+         +     '<span>' + ev.time + ' &bull; ' + locHtml + '</span>'
+         +   '</div>'
+         + '</div>';
+  }
+
+  let html = '';
+  if (upcoming.length > 0) {
+    html += '<h3 class="event-list-heading">Upcoming</h3>';
+    html += upcoming.map(function(ev) { return makeItem(ev, false); }).join('');
+  }
+  if (past.length > 0) {
+    html += '<h3 class="event-list-heading event-list-heading-past">Past Events</h3>';
+    html += past.map(function(ev) { return makeItem(ev, true); }).join('');
+  }
+  container.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initCalendar();
+  renderEventList();
+});

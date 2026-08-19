@@ -191,4 +191,29 @@ SUMMARY:More Tea Wednesday
 DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
 LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260805@more_tea_community
+DTSTART;TZID=America/Vancouver:20260805T120000
+DTEND;TZID=America/Vancouver:20260805T130000
+SUMMARY:More Tea Wednesday
+DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260812@more_tea_community
+DTSTART;TZID=America/Vancouver:20260812T120000
+DTEND;TZID=America/Vancouver:20260812T130000
+SUMMARY:More Tea Wednesday
+DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260820@more_tea_community
+DTSTART;TZID=America/Vancouver:20260820T163000
+DTEND;TZID=America/Vancouver:20260820T180000
+SUMMARY:Frisbee + Tea Picnic
+DESCRIPTION:We don't have regular tea this week, however, we will have a frisbee + tea picnic outside the building. Ali will bring some tea (in his thermos) and some cups as well. Come by! Map: https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6
+LOCATION:UVic Quad, University of Victoria, Victoria, BC
+URL:https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6
+END:VEVENT
 END:VCALENDAR
