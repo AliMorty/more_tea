@@ -208,9 +208,9 @@ DESCRIPTION:All students, faculty, and researchers welcome. Caffeinated and Deca
 LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
 BEGIN:VEVENT
-UID:more-tea-20260820@more_tea_community
-DTSTART;TZID=America/Vancouver:20260820T163000
-DTEND;TZID=America/Vancouver:20260820T180000
+UID:more-tea-20260827@more_tea_community
+DTSTART;TZID=America/Vancouver:20260827T163000
+DTEND;TZID=America/Vancouver:20260827T180000
 SUMMARY:Frisbee + Tea Picnic
 DESCRIPTION:We don't have regular tea this week, however, we will have a frisbee + tea picnic outside the building. Ali will bring some tea (in his thermos) and some cups as well. Come by! Map: https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6
 LOCATION:UVic Quad, University of Victoria, Victoria, BC

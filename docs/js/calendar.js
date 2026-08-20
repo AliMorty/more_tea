@@ -165,7 +165,7 @@ const EVENTS = [
     description: 'All students, faculty, and researchers welcome. Caffeinated and Decaf tea provided!'
   },
   {
-    date: '2026-08-20',
+    date: '2026-08-27',
     title: 'Frisbee + Tea Picnic',
     location: 'UVic Quad',
     locationUrl: 'https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6',
