@@ -25,4 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
       hamburger.setAttribute('aria-expanded', 'false');
     }
   });
+
+  document.querySelectorAll('.btn-copy-link').forEach(function(btn) {
+    var originalLabel = btn.dataset.label || btn.textContent.trim();
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(btn.dataset.copy).then(function() {
+        btn.dataset.label = originalLabel;
+        btn.querySelector('.btn-copy-text').textContent = 'Link Copied!';
+        setTimeout(function() {
+          btn.querySelector('.btn-copy-text').textContent = originalLabel;
+        }, 2000);
+      });
+    });
+  });
 });
