@@ -216,4 +216,28 @@ DESCRIPTION:We don't have regular tea this week, however, we will have a frisbee
 LOCATION:UVic Quad, University of Victoria, Victoria, BC
 URL:https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6
 END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260915@more_tea_community
+DTSTART;TZID=America/Vancouver:20260915T120000
+DTEND;TZID=America/Vancouver:20260915T130000
+SUMMARY:More Tea Tuesday
+DESCRIPTION:More Tea is back! For the month of September (and possibly more)\, we have our weekly tea events on Tuesdays 12pm to 1pm in ECS668. Also\, I recently got a Turkish coffee pot\, so we now have tea and Turkish coffee!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260922@more_tea_community
+DTSTART;TZID=America/Vancouver:20260922T120000
+DTEND;TZID=America/Vancouver:20260922T130000
+SUMMARY:More Tea Tuesday
+DESCRIPTION:All students, faculty, and researchers welcome. Tea and Turkish coffee provided!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
+BEGIN:VEVENT
+UID:more-tea-20260929@more_tea_community
+DTSTART;TZID=America/Vancouver:20260929T120000
+DTEND;TZID=America/Vancouver:20260929T130000
+SUMMARY:More Tea Tuesday
+DESCRIPTION:All students, faculty, and researchers welcome. Tea and Turkish coffee provided!
+LOCATION:ECS 668, University of Victoria, Victoria, BC
+END:VEVENT
 END:VCALENDAR

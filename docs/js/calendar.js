@@ -171,6 +171,27 @@ const EVENTS = [
     locationUrl: 'https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6',
     time: '4:30 PM - 6:00 PM',
     description: "We don't have regular tea this week, however, we will have a frisbee + tea picnic outside the building. Ali will bring some tea (in his thermos) and some cups as well. Come by!"
+  },
+  {
+    date: '2026-09-15',
+    title: 'More Tea Tuesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 1:00 PM',
+    description: "More Tea is back! For the month of September (and possibly more), we have our weekly tea events on Tuesdays 12pm to 1pm in ECS668. Also, I recently got a Turkish coffee pot, so we now have tea and Turkish coffee!"
+  },
+  {
+    date: '2026-09-22',
+    title: 'More Tea Tuesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 1:00 PM',
+    description: 'All students, faculty, and researchers welcome. Tea and Turkish coffee provided!'
+  },
+  {
+    date: '2026-09-29',
+    title: 'More Tea Tuesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 1:00 PM',
+    description: 'All students, faculty, and researchers welcome. Tea and Turkish coffee provided!'
   }
 ];
 
