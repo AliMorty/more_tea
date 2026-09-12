@@ -1040,9 +1040,10 @@ footer {
 .news-page {
   max-width: 780px;
   margin: 0 auto;
-  padding: 3rem 1.75rem 5rem;
-  background: var(--cream);
-  min-height: calc(100vh - var(--nav-height));
+  padding: 3rem 1.75rem 3.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .news-page-title {
@@ -1078,7 +1079,8 @@ footer {
 }
 
 .news-text {
-  font-size: 0.93rem;
+  font-family: 'Calisto MT', 'Bookman Old Style', Garamond, serif;
+  font-size: 1rem;
   color: var(--text);
   line-height: 1.6;
 }
