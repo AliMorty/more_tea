@@ -192,7 +192,7 @@ const EVENTS = [
     location: 'UVic Quad',
     locationUrl: 'https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6',
     time: '5:00 PM - 6:00 PM',
-    description: "We don't have regular tea this week due to a Lunch n Learn event (1:30-2:30 PM, ECS 660) - check that out if you can! Instead, we'll have a frisbee + tea picnic outside. Ali will bring some tea (in his thermos) and some cups as well. Come by!"
+    description: "frisbee + tea picnic from 5 to 6pm. Ali will bring some tea (in his thermos) and some cups as well. Come by!"
   }
 ];
 
