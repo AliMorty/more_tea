@@ -233,9 +233,9 @@ DESCRIPTION:All students, faculty, and researchers welcome. Tea and Turkish coff
 LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
 BEGIN:VEVENT
-UID:more-tea-20261001@more_tea_community
-DTSTART;TZID=America/Vancouver:20261001T170000
-DTEND;TZID=America/Vancouver:20261001T180000
+UID:more-tea-20261008@more_tea_community
+DTSTART;TZID=America/Vancouver:20261008T170000
+DTEND;TZID=America/Vancouver:20261008T180000
 SUMMARY:Frisbee + Tea Picnic
 DESCRIPTION:frisbee + tea picnic from 5 to 6pm. Ali will bring some tea (in his thermos) and some cups as well. Come by!
 LOCATION:UVic Quad, University of Victoria, Victoria, BC
