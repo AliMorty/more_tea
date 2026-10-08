@@ -185,14 +185,6 @@ const EVENTS = [
     location: 'ECS 668',
     time: '12:00 PM - 1:00 PM',
     description: 'All students, faculty, and researchers welcome. Tea and Turkish coffee provided!'
-  },
-  {
-    date: '2026-10-08',
-    title: 'Frisbee + Tea Picnic',
-    location: 'UVic Quad',
-    locationUrl: 'https://maps.app.goo.gl/qpaAQGCGBjCQjxqP6',
-    time: '5:00 PM - 6:00 PM',
-    description: "frisbee + tea picnic from 5 to 6pm. Ali will bring some tea (in his thermos) and some cups as well. Come by!"
   }
 ];
 
