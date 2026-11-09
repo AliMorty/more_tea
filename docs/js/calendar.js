@@ -192,6 +192,13 @@ const EVENTS = [
     location: 'ECS 668',
     time: '12:00 PM - 1:00 PM',
     description: 'All students, faculty, and researchers welcome. Tea and Turkish coffee provided!'
+  },
+  {
+    date: '2026-11-17',
+    title: 'More Tea Tuesday',
+    location: 'ECS 668',
+    time: '12:00 PM - 1:00 PM',
+    description: 'All students, faculty, and researchers welcome. Tea and Turkish coffee provided!'
   }
 ];
 
