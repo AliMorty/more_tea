@@ -242,9 +242,9 @@ LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
 BEGIN:VEVENT
 UID:more-tea-20261117@more_tea_community
-DTSTART;TZID=America/Vancouver:20261117T120000
-DTEND;TZID=America/Vancouver:20261117T130000
-SUMMARY:More Tea Tuesday
+DTSTART;TZID=America/Vancouver:20261120T120000
+DTEND;TZID=America/Vancouver:20261120T130000
+SUMMARY:More Tea Friday
 DESCRIPTION:All students, faculty, and researchers welcome. Tea and Turkish coffee provided!
 LOCATION:ECS 668, University of Victoria, Victoria, BC
 END:VEVENT
