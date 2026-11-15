@@ -166,10 +166,10 @@ h1, h2, h3, h4 {
    HERO SECTION (homepage)
    ============================================= */
 .hero {
-  position: relative;
-  height: calc(100vh - var(--nav-height));
+  height: 70vh;
   overflow: hidden;
   background-color: var(--brown-dark);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .hero img {
@@ -180,37 +180,15 @@ h1, h2, h3, h4 {
   background-color: var(--brown-dark);
 }
 
-.scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  opacity: 0.75;
-  animation: scrollBounce 2s ease-in-out infinite;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-}
-
-@keyframes scrollBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(10px); }
-}
-
-/* Hero scroll-away animation */
-.hero {
-  transition: margin-top 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero.no-transition {
-  transition: none !important;
-}
-
-.hero.hero-exit {
-  margin-top: calc(-100vh + var(--nav-height));
+/* Hidden until scrolled into view (see js/hero-reveal.js) */
+.hero.hero-hidden {
   opacity: 0;
-  pointer-events: none;
-  overflow: hidden;
+  transform: translateY(40px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero { transition: none; }
+  .hero.hero-hidden { opacity: 1; transform: none; }
 }
 
 
