@@ -163,47 +163,6 @@ h1, h2, h3, h4 {
 .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* =============================================
-   HERO SECTION (homepage)
-   ============================================= */
-/* Secret photo page (see js/hero-reveal.js).
-   Sits just below the screen. At the bottom of the page, scrolling down slides
-   it up to fill the screen under the nav bar; scrolling up slides it back down. */
-.hero {
-  position: fixed;
-  top: var(--nav-height);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 90;
-  overflow: hidden;
-  background-color: #000;
-  transform: translateY(100%);
-  visibility: hidden;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 0s linear 0.8s;
-}
-
-.hero.hero-shown {
-  transform: translateY(0);
-  visibility: visible;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 0s;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  background-color: #000;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero, .hero.hero-shown { transition: none; }
-}
-
-
-/* =============================================
    PAGE LAYOUT (2-column: main + sidebar)
    ============================================= */
 .page-container {
